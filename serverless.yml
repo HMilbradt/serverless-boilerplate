@@ -1,0 +1,30 @@
+# serverless.yml
+
+service:
+  name: serverless-boilerplate
+
+frameworkVersion: ">=1.0.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev # Set the default stage used. Default is dev
+  region: us-east-2 # Overwrite the default region used. Default is us-east-1
+  profile: personal # The default profile to use with this service
+  memorySize: 128 # Overwrite the default memory size. Default is 1024
+  timeout: 10 # The default is 6 seconds. Note: API Gateway current maximum is 30 seconds
+  logRetentionInDays: 7 # Set the default RetentionInDays for a CloudWatch LogGroup
+  environment: # Service wide environment variables
+    serviceEnvVar: 123456789
+
+functions:
+  index:
+    handler: src/handler.index
+    name: ${self:service.name}
+    events:
+      - http:
+          path: index
+          method: get
+
+plugins: 
+  - serverless-offline

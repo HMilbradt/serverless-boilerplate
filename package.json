@@ -1,0 +1,27 @@
+{
+  "name": "serverless-boilerplate",
+  "version": "1.0.0",
+  "description": "Serverless Framework boilerplate for quickly testing new features.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sls offline start --watch",
+    "deploy": "sls deploy",
+    "logs": "sls logs -f"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HMilbradt/serverless-boilerplate.git"
+  },
+  "author": "Harrison Milbradt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HMilbradt/serverless-boilerplate/issues"
+  },
+  "homepage": "https://github.com/HMilbradt/serverless-boilerplate#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.306.0",
+    "serverless": "^1.30.3",
+    "serverless-offline": "^3.25.10"
+  }
+}
